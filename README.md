@@ -8,7 +8,7 @@ A high-performance system for tracking and analyzing e-commerce website visits w
 
 - Real-time visit tracking by country
 - Docker containerization for easy deployment
-- Modern React-based frontend with Aceternity UI
+- Modern Next.js frontend with Aceternity UI
 - High-load capability (1000+ requests/second)
 - Rate Limiting by IP
 - Redis-based caching for optimal performance
@@ -144,17 +144,6 @@ npm run start
 docker compose -f compose.yml up -d
 ```
 
-### Environment Variables
-
-#### Backend
-- `NODE_ENV` - Environment (production/development)
-- `PORT` - Server port
-- `REDIS_HOST` - Redis host
-- `REDIS_PORT` - Redis port
-
-#### Frontend
-- `NEXT_PUBLIC_API_URL` - Backend API URL
-
 ## Performance Considerations
 
 - Backend uses cluster mode in production for multi-core utilization
@@ -162,7 +151,7 @@ docker compose -f compose.yml up -d
   - Memory management
   - Connection pooling
   - Persistence settings
-- Rate limiting is enabled (1000 req/min per IP)
+- Rate limiting is enabled (100 req/min per single IP)
 - Response compression is enabled
 
 ## Security Features
