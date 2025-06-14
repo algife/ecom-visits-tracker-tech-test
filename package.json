@@ -1,0 +1,21 @@
+{
+    "name": "ecom-visits-tracker",
+    "version": "0.1.0",
+    "private": true,
+    "author": {
+        "email": "cookingstartupscom@gmail.com",
+        "name": "Alexandre Giménez"
+    },
+    "scripts": {
+        "test": "cd backend && npm run test && cd ../frontend && npm run test",
+        "lint": "cd frontend && npm run lint && cd ../backend && npm run lint",
+        "build": "cd frontend && npm run build && cd ../backend && npm run build",
+        "start": "npm run dc:re",
+        "install": "cd frontend && npm ci && cd ../backend && npm ci",
+        "dc:up:scale": "docker-compose up --build --scale backend=1 --scale frontend=1",
+        "dc:down": "docker-compose down -v",
+        "dc:up": "docker-compose up --build",
+        "dc:re": "npm run dc:down && npm run dc:up:scale",
+        "prune": "docker system prune --all"
+    }
+}
